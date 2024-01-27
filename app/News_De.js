@@ -1,0 +1,108 @@
+// "use client "
+// // import React from 'react';
+// import React, { useState, useEffect } from 'react';
+
+
+// export default function News_De() {
+
+//   const [newsData, setNewsData] = useState([]);
+
+//   useEffect(() => {
+//     const apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=dec62bb5689649c389b7d3bd62a6646d';
+
+//     const fetchData = async () => {
+//       try {
+//         const response = await fetch(apiUrl);
+
+//         if (!response.ok) {
+//           throw new Error(`HTTP error! Status: ${response.status}`);
+//         }
+
+//         const data = await response.json();
+//         setNewsData(data.articles);
+//       } catch (error) {
+//         console.error('Error fetching data:', error.message);
+//       }
+//     };
+
+//     fetchData();
+//   }, []); 
+
+//   return (
+//     <div>
+//       <div className='box-container'>
+//         {newsData.map((article) => (
+//           <div key={article.url} className='box'>
+//             {article.urlToImage && (
+//               <img
+//                 src={article.urlToImage}
+//                 alt={article.title}
+//               />
+//             )}
+//             <h3>{article.title}</h3>
+//             <p>
+//               {article.description
+//                 ? `${article.description.substring(0, 60)}...`
+//                 : 'No description available'}
+//             </p>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+"use client"
+import { useState, useEffect } from 'react';
+
+function MyComponent() {
+  const [newsData, setNewsData] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=dec62bb5689649c389b7d3bd62a6646d';
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setNewsData(data.articles.slice(0,9));
+      } catch (error) {
+        console.error('Error fetching data:', error.message);
+      }
+    };
+
+    fetchData();
+  }, []); 
+
+  return (
+    <div>
+      <div className='box-container'>
+        {newsData.map((article) => (
+          <div key={article.url} className='box'>
+            {article.urlToImage && (
+              <img
+                src={article.urlToImage}
+                alt={article.title}
+              />
+            )}
+            <h4>{article.title
+              ? `${article.title.substring(0,60)}...`
+              : 'No title available'}
+            </h4>
+            <p>
+              {article.description
+                ? `${article.description.substring(0, 70)}...`
+                : 'No description available'}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default MyComponent;
