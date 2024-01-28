@@ -46,18 +46,42 @@
 }
 
 .container .box-container .box img{
-  height: 100px;
+  height: 120px;
+  width: 250px;
 }
-.container .box-container.box h4{
+.container .box-container.box h5{
   color: #444;
-  font-size:10px;
+  /* font-size:5px; */
+  padding: 5px;
+  width: 250px;
+  line-height: 120%;
+
+
+ 
+
 }
 
 
 .container .box-container.box p{
   color: #777;
+  width: 250px;
+  line-height: 120%;
+  padding: 5px;
 }
 
+.container .box-container .box a{
+  color: var(--Dark-Red, #D02424);
+
+}
+
+.container .box-container .box .linkA{
+  /* text-align: end; */
+  display: flex;
+  gap: 5px;
+
+
+  
+}
 
 .container .center_text_he{
   margin: auto;
@@ -80,30 +104,16 @@
 .go{
   display: flex;
   padding: 15px;
-  align-items: center;
-  border-radius: 1px;
-  border: 1px solid #E84848;
-  background: #E84848;
-}
-
-.go_text{
   color: var(--light, #FDFDFA);
   font-family: "Iowan Old Style";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-}
-
-.search_text{
-  color: var(--Dark, #3C3030);
-  font-family: "Iowan Old Style";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
-  opacity: 0.61;
-
+  align-items: center;
+  border-radius: 1px;
+  border: 1px solid #E84848;
+  background: #E84848;
 }
 
 
@@ -118,5 +128,9 @@
 }
 .logo{
   display: flex;
-  
+
+}
+
+input:focus{
+  outline: none;
 }
