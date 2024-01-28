@@ -10,8 +10,6 @@ export default function page() {
       <Search_bar/>
       {/* <MyComponent/> */}
       <List/>
-      {/* <List/>
-      <List/> */}
 
     </div>
   )
