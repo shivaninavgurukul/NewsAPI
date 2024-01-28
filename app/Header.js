@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <div>
       <div className='center_text_he'>
-        <div className='News'>NewsAPI<img src='/logo.png'></img>Org</div>
+        <img className='img-fluid' src='logo.png'></img>
       </div>
         <hr></hr>
         <hr></hr>

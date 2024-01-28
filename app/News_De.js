@@ -58,7 +58,7 @@ function MyComponent() {
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
-    const apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=dec62bb5689649c389b7d3bd62a6646d';
+    const apiUrl = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=dec62bb5689649c389b7d3bd62a6646d';
 
     const fetchData = async () => {
       try {
@@ -69,7 +69,7 @@ function MyComponent() {
         }
 
         const data = await response.json();
-        setNewsData(data.articles.slice(0,9));
+        setNewsData(data.articles.slice(6,15));
       } catch (error) {
         console.error('Error fetching data:', error.message);
       }
